@@ -17,6 +17,9 @@
   background-color: #f4f4f4;
   left: -200px;
 }
+.dashboard-container nav.open {
+    left: 0;
+}
 
 .dashboard-container nav ul {
   list-style: none;

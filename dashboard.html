@@ -6,37 +6,128 @@
   <title>Listado de Productos</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="dashboard_style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <script src="dashboard.js"></script>
 </head>
 <body>
   <div class="dashboard-container">
     <header>
-      <span>Gestor de turnos</span>
       <div>
         <button id="menu" class="menu">&#9776;</button>
-        <button id="logout">Cerrar Sesión</button>
       </div>
     </header>
+
     <nav id="sidebar">
-      <ul>
-        <li><a href="#">Panel</a></li>
+      <div class="titulo-principal">
+        <div class="titulo">Admin Portal</div>
+        <div class="subtitulo">Healthcare Management</div>
+      </div>
+
+      <ul class="lista">
+        <li class="panel">
+          <a href="#"><i class="fa-solid fa-border-all"></i>Panel</a>
+        </li>
+        <li>
+          <a href="#"><i class="fa-solid fa-user-doctor"></i>Doctores</a>
+        </li>
+        <li>
+          <a href="#"><i class="fa-solid fa-stethoscope"></i>Especialidades</a>
+        </li>
+        <li>
+          <a href="#"><i class="fa-solid fa-magnifying-glass"></i>Búsqueda de Pacientes</a>
+        </li>
       </ul>
+
+      <div class="sesion">
+        <ul>
+          <li>
+            <a href="#"><i class="fa-solid fa-gear"></i>Configuración</a>
+          </li>
+          <li>
+            <a href="login.html" id="logout"><i class="fa-solid fa-right-from-bracket"></i>Cerrar Sesión</a>
+          </li>
+        </ul>
+
+        <div class="user">
+          <img src="" alt="Perfil">
+            <div class="user-info">
+              <div class="user-name">Lula Sarte</div>
+              <div class="user-role">Administradora Jefe</div>
+            </div>
+        </div>
+      </div>
     </nav>
+
     <main>
-      <h1>Pacientes</h1>
+      <div class="titulos">
+        <h1 class="titulo-main">Vista General de Gestión</h1>
+        <p class="subtitulo-main">Configure el personal médico y las especialidades del departamento</p>
+      </div>
+      
+      <div class="botones">
+        <div class="agregar-doctor">
+          <button id="agregarDoctor"><i class="fa-solid fa-plus"></i>Agregar Nuevo Doctor</button>
+        </div>
+        <div class="agregar-esp">
+          <button id="agregarEspecialidad"><i class="fa-solid fa-diagram-project"></i>Agregar Nueva Especialidad</button>
+        </div>
+      </div>
+      <br>
+      <div class="tarjetas">
+        <div class="tarjeta">
+          <div class="icono"><i class="fa-solid fa-user-doctor"></i></div>
+          <div class="texto">
+            DOCTORES ACTIVOS
+          </div>
+          <div class="valor">
+            124
+          </div>
+        </div>
+
+        <div class="tarjeta">
+          <div class="icono"><i class="fa-solid fa-border-all"></i></div>
+          <div class="texto">
+            ESPECIALIDADES ACTIVAS
+          </div>
+          <div class="valor">
+            32
+          </div>
+        </div>
+
+        <div class="tarjeta">
+          <div class="icono"><i class="fa-solid fa-calendar-check"></i></div>
+          <div class="texto">
+            TURNOS CONFIRMADOS PARA HOY
+          </div>
+          <div class="valor">
+            48
+          </div>
+        </div>
+      </div>
+
+      <div class="tabla-conteiner">
+        <div class="tabla-top">
+          <h2 class="titulo-tabla"> Directorio de Profesionales Médicos</h2>
+          <div class="buscador"><i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Buscar por nombre...">
+          </div>
+        </div>
+
       <table>
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Paciente</th>
+            <th>Nombre del doctor</th>
+            <th>Especialidad</th>
+            <th>Estado de disponibilidades</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody id="product-table-body">
           <!-- Los productos se cargarán aquí dinámicamente -->
         </tbody>
       </table>
+    </div>
     </main>
-    <footer>Mi Aplicación &copy; 2024</footer>
   </div>
 </body>
 </html>

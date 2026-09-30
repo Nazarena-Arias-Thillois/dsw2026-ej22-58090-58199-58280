@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listado de Productos</title>
+  <link rel ="stylesheet" href="specialty.html">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="create-specialty.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="create-specialty.js"></script>
+</head>
+<body>
+  <div class="create-specialty-container">
+    <header>
+      <div>
+        <button id="menu" class="menu">&#9776;</button>
+      </div>
+    </header>
+
+    <nav id="sidebar">
+      <div class="titulo-principal">
+        <div class="titulo">Admin Portal</div>
+        <div class="subtitulo">Healthcare Management</div>
+      </div>
+
+      <ul class="lista">
+        <li>
+          <a href="dashboard.html"><i class="fa-solid fa-border-all"></i>Panel</a>
+        </li>
+        <li>
+          <a href="#"><i class="fa-solid fa-user-doctor"></i>Doctores</a>
+        </li>
+        <li class="active">
+          <a href="#"><i class="fa-solid fa-stethoscope"></i>Especialidades</a>
+        </li>
+        <li>
+          <a href="#"><i class="fa-solid fa-magnifying-glass"></i>Búsqueda de Pacientes</a>
+        </li>
+      </ul>
+
+      <div class="sesion">
+        <ul>
+          <li>
+            <a href="#"><i class="fa-solid fa-gear"></i>Configuración</a>
+          </li>
+          <li>
+            <a href="login.html" id="logout"><i class="fa-solid fa-right-from-bracket"></i>Cerrar Sesión</a>
+          </li>
+        </ul>
+
+        <div class="user">
+          <img src="FOTO.jpg" alt="Perfil">
+            <div class="user-info">
+              <div class="user-name">Lula Sarte</div>
+              <div class="user-role">Administradora Jefe</div>
+            </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="titulos">
+        <h1 class="titulo-main">Registrar Nueva Especialidad</h1>
+        <p class="subtitulo-main">Complete la información técnica y administrativa para dar de alta una especialidad médica en el sistema hospitalario.</p>
+      </div>
+      
+       <div class = "form-container">
+        <form id="form-crear-especialidades"> 
+          <div class="especialidades-form">
+            <label for="nombre">Nombre de la Especialidad</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ej: Cardiologia Intervecionista">
+            <span id="error-nombre" class="error"></span>
+          </div>
+          <div class="especialidades-form">
+            <label for="descripcion">Descripción</label>
+            <textarea id="descripcion" name="descripcion" placeholder="Detalle el alcance de la especialidad, procedimientos principales y requisitos de derivación..." rows="4"></textarea>
+            <span id="error-descripcion" class="error"></span>
+          </div>
+          <div class="especialidades-form">
+            <label for="estado">Estado inicial</label>
+            <select id="estado">
+                <option>Activo</option>
+                <option>Inactivo</option>
+            </select>
+          </div>
+            <div class="botones">
+                <div class="cancelar">
+                    <button type="button" id="cancelar">Cancelar</button>
+                </div>
+                <div class="guardar-esp">
+                    <button type="submit"><i class="fa-solid fa-floppy-disk"></i>Guardar especialidad</button>
+                </div>
+            </div>
+        </form>
+       </div>
+       <div class="oculto" id="mensaje-creacion">
+          <h3 style="margin-bottom: 10px;">¡Especialidad creada con éxito!</h3>
+          <p><strong>Nombre:</strong> <span id="res-nombre"></span></p>
+          <p><strong>Descripción:</strong> <span id="res-descripcion"></span></p>
+          <p><strong>Estado:</strong> <span id="res-estado"></span></p>
+        </div>
+    </main>
+  </div>
+</body>
+</html>

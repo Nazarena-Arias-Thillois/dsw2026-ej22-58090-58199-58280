@@ -1,50 +1,106 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const logoutButton = document.getElementById('logout');
+    const menuButton = document.getElementById('menu');
+    const nav = document.getElementById('sidebar');
+    logoutButton.addEventListener('click', () => {
+    window.location.href = 'login.html';
+  });
+
+  menuButton.addEventListener('click', () => {
+    nav.classList.toggle('open');
+  });
     let especialidades = [];
 
     cargarEspecialidades();
-
-    const buscarButton = document.getElementById('buscador');
-    buscarButton.addEventListener('click', () => {
-    filtrarEspecialidades();
-    });
-
-    async function cargarEspecialidades(params) {
-        try {
-            const response = await fetch('specialties.json');
-            const especialidades = await response.json();
-
-            renderizarTabla(especialidades);
-        }catch(error){
-            console.error("Error al cargar el archivo: ", error)
-        }
+    
+    const buscarInput = document.getElementById('busqueda');
+    if (buscarInput) {
+        buscarInput.addEventListener('input', filtrarEspecialidades);
     }
 
-    function renderizarTabla(datos){
-        const body = document.getElementById('specialtiesTable');
-        body.innerHTML = '';
+    function cargarEspecialidades() {
+        const storedData = localStorage.getItem('specialties');
+        especialidades = storedData ? JSON.parse(storedData) : [];
+        renderizarTabla(especialidades);
+    }
 
+    function renderizarTabla(datos) {
+        const tbody = document.getElementById('specialtiesTable'); 
+        if(!tbody) return;
+
+        tbody.textContent = ''; 
+        
         datos.forEach(item => {
             const fila = document.createElement('tr');
 
-            const nombre = document.createElement('td');
-            nombre.textContent = item.nombre;
+            const tdNombre = document.createElement('td');
+            tdNombre.classList.add('nombre');
+            
+            const iconoDecorativo = document.createElement('div');
+            iconoDecorativo.classList.add('icono-especialidad');
+            
+            const iMed = document.createElement('i');
+            iMed.classList.add('fa-solid', 'fa-stethoscope'); 
+            
+            const textoNombre = document.createElement('span');
+            textoNombre.textContent = item.name;
 
-             const descripcion = document.createElement('td');
-            descripcion.textContent = item.descripcion; 
+            iconoDecorativo.appendChild(iMed);
+            tdNombre.appendChild(iconoDecorativo);
+            tdNombre.appendChild(textoNombre);
 
-            fila.appendChild(nombre);
-            fila.appendChild(descripcion);
+            const tdDescripcion = document.createElement('td');
+            tdDescripcion.textContent = item.description; 
 
-            body.appendChild(fila);
+            const tdEstado = document.createElement('td');
+            const spanEstado = document.createElement('span');
+            const textoEstado = item.status || 'Activo'; 
+            
+            spanEstado.textContent = textoEstado;
+            spanEstado.classList.add('estado', textoEstado.toLowerCase());
+            tdEstado.appendChild(spanEstado);
+
+            const tdAcciones = document.createElement('td');
+            
+            const iconoEditar = document.createElement('i');
+            iconoEditar.classList.add('fa-solid', 'fa-pen', 'accion', 'editar');
+
+            const iconoEliminar = document.createElement('i');
+            iconoEliminar.classList.add('fa-solid', 'fa-trash', 'accion', 'eliminar');
+            iconoEliminar.addEventListener('click', () => eliminarEspecialidad(item.id));
+
+            tdAcciones.appendChild(iconoEditar);
+            tdAcciones.appendChild(iconoEliminar);
+
+            fila.appendChild(tdNombre);
+            fila.appendChild(tdDescripcion);
+            fila.appendChild(tdEstado);
+            fila.appendChild(tdAcciones);
+
+            tbody.appendChild(fila);
         });
     }
 
-    function filtrarEspecialidades(){
+    function filtrarEspecialidades() {
         const texto = document.getElementById('busqueda').value.toLowerCase();
+        const storedData = localStorage.getItem('specialties');
+        const dataBase = storedData ? JSON.parse(storedData) : [];
 
-        const filtradas = especialidades.filter(item => 
-            item.nombre.toLowerCase().includes(texto)
+        const filtradas = dataBase.filter(item => 
+            item.name.toLowerCase().includes(texto) ||
+            item.description.toLowerCase().includes(texto)
         );
+        
         renderizarTabla(filtradas);
+    }
+    function eliminarEspecialidad(id) {
+
+        const storedData = localStorage.getItem('specialties');
+        let dataBase = storedData ? JSON.parse(storedData) : [];
+
+        dataBase = dataBase.filter(item => item.id !== id);
+
+        localStorage.setItem('specialties', JSON.stringify(dataBase));
+        renderizarTabla(dataBase);
     }
 });

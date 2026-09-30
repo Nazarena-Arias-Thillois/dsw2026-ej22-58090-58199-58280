@@ -3,15 +3,15 @@
     grid-template-columns: auto;
     grid-template-rows: auto 1fr auto;
     height: 100dvh;
-    background-color: #f4f8fb;
+    background-color: rgb(244, 248, 251);
   }
   .specialty-container header {
-    background-color: #ffffff;
+    background-color: rgb(255, 255, 255);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid rgb(226, 232, 240);
     z-index: 1001;
   }
   .specialty-container button{
@@ -24,57 +24,57 @@
     margin-bottom: 1.5rem;
   }
   .specialty-container .tarjeta{
-    background: #ffffff;
+    background: rgb(255, 255, 255);
     padding: 1.25rem;
     border-radius: 8px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid rgb(226, 232, 240);
     display: grid;
     align-items: start;
     grid-template-columns: 1fr auto;
-    border-left: 4px solid #1e3a8a;
+    border-left: 4px solid rgb(30, 58, 138);
   }
   .specialty-container .icono{
-    background-color: #e2eaf1;
+    background-color: rgb(226, 234, 241);
     width: 36px;
     height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 6px;
-    color: #0c4a6e;
+    color: rgb(12, 74, 110);
     margin-bottom: 1rem;
   }
   .specialty-container .texto{
     font-size: 1.5;
     font-weight: 500;
-    color: #5c697b;
+    color: rgb(92, 105, 123);
   }
   .specialty-container .valor{
     font-size: 0.9rem;
     font-weight: 500;
-    color: #5c697b;  
+    color: rgb(92, 105, 123);  
   }
   .specialty-container .titulo-tabla{
     font-size: 1.1rem;
     font-weight: 700;
-    color: #0f172a;
+    color: rgb(15, 23, 42);
   }
   .specialty-container .tabla-top{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    background-color: #ffffff;
+    background-color: rgb(255, 255, 255);
   }
   .specialty-container .buscador{
     display: flex;
     align-items: center;
-    background-color: white;
-    border: 1px solid #e0f2fe;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(224, 242, 254);
     padding: 6px 12px;
     border-radius: 8px;
     gap: 8px;
-    color: #0284c7;
+    color: rgb(2, 132, 199);
     width: fit-content;
     margin-bottom: 1rem;
   }
@@ -85,10 +85,10 @@
     font-size: 0.85rem;
   }
   .specialty-container .table-conteiner{
-    background-color: #ffffff;
-    border: 1px solid #e2e8f0;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(226, 232, 240);
     border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     overflow: hidden; 
     margin-top: 1.5rem;
   }
@@ -96,34 +96,34 @@
     width: 100%;
     border-collapse: collapse;
     text-align: left;
-    background: #ffffff;
+    background: rgb(255, 255, 255);
     border-radius: 8px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid rgb(226, 232, 240);
   }
   .specialty-container thead{
-    background-color: #f8fafc;
-    border-bottom: 1px solid #e2e8f0;
+    background-color: rgb(248, 250, 252);
+    border-bottom: 1px solid rgb(226, 232, 240);
   }
   .specialty-container thead tr{
-    background-color: white;
+    background-color: rgb(255, 255, 255);
   }
   .specialty-container th{
     padding: 1rem 1.5rem;
     font-size: 0.85rem;
     font-weight: 600;
-    color: #475569;
-    border-bottom: 1px solid #e2e8f0;
+    color: rgb(71, 85, 105);
+    border-bottom: 1px solid rgb(226, 232, 240);
   }
   .specialty-container td{
     padding: 1.25rem 1.5rem;
     font-size: 0.9rem;
-    color: #475569;
-    border-bottom: 1px solid #e2e8f0;
+    color: rgb(71, 85, 105);
+    border-bottom: 1px solid rgb(226, 232, 240);
     vertical-align: middle;
   }
   .specialty-container .table-conteiner .nombre{
     font-weight: 600;
-    color: #0f172a;
+    color: rgb(15, 23, 42);
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -134,8 +134,8 @@
     justify-content: center;
     width: 32px;
     height: 32px;
-    background-color: #e0f2fe;
-    color: #0284c7;
+    background-color: rgb(224, 242, 254);
+    color: rgb(2, 132, 199);
     border-radius: 6px;
     font-size: 1rem;
   }
@@ -148,17 +148,17 @@
   }
   .specialty-container .table-conteiner .estado.activo,
   .specialty-container .table-conteiner .estado.active{
-    background-color: #dcfce7;
-    color: #16a34a;
+    background-color: rgb(220, 252, 231);
+    color: rgb(22, 163, 74);
   }
   .specialty-container .table-conteiner .estado.inactivo,
   .specialty-container .table-conteiner .estado.inactive{
-    background-color: #f1f5f9;
-    color: #64748b;
+    background-color: rgb(241, 245, 249);
+    color: rgb(100, 116, 139);
   }
   .specialty-container .table-conteiner .accion{
     cursor: pointer;
-    color: #94a3b8;  
+    color: rgb(148, 163, 184);  
     font-size: 1rem;
     transition: color 0.2s ease;
   }
@@ -170,7 +170,7 @@
     top: 50px;
     width: 200px;
     box-sizing: border-box;
-    background-color: #f8fafc;
+    background-color: rgb(248, 250, 252);
     left: -200px;
     height: 100vh;
     display: flex;
@@ -188,12 +188,12 @@
   .specialty-container nav .titulo-principal .titulo{
     font-size: 1.2rem;
     font-weight: 800;
-    color: #1e3a8a;
+    color: rgb(30, 58, 138);
   }
   .specialty-container nav .titulo-principal .subtitulo{
     font-size: 0.8rem;
     margin-bottom: 1.5rem;
-    color: #64748b;
+    color: rgb(100, 116, 139);
   }
   .specialty-container nav ul {
     padding: 0;
@@ -209,7 +209,7 @@
     align-items: center;
     gap: 0.75rem;
     padding: 0.75rem 1rem;
-    color: #475569;
+    color: rgb(71, 85, 105);
     text-decoration: none;
     font-weight: 500;
     border-radius: 6px;
@@ -217,9 +217,9 @@
   }
   .specialty-container nav ul li.active a,
   .specialty-container nav ul li a:hover {
-    border-left: 4px solid #1e3a8a;
-    background-color: #fefefe;
-    color: #0d9488;
+    border-left: 4px solid rgb(30, 58, 138);
+    background-color: rgb(254, 254, 254);
+    color: rgb(13, 148, 136);
     font-weight: 600;
   }
   .specialty-container .sesion{
@@ -231,7 +231,7 @@
     gap: 0.75rem;
     margin-top: 1rem;
     padding-top: 1rem;
-    border-top: 1px solid #e2e8f0;
+    border-top: 1px solid rgb(226, 232, 240);
   }
   .specialty-container .user img{
     width: 36px;
@@ -241,11 +241,11 @@
   .specialty-container .user-name{
     font-size: 0.85rem;
     font-weight: 700;
-    color: #0f172a;
+    color: rgb(15, 23, 42);
   }
   .specialty-container .user-role{
     font-size: 0.75rem;
-    color: #64748b;
+    color: rgb(100, 116, 139);
   }
   .specialty-container main{
     padding: 2.5rem;
@@ -254,10 +254,10 @@
   .specialty-container .titulo-main{
     font-size: 2rem;
     font-weight: 700;
-    color:  black;
+    color: rgb(0, 0, 0);
   }
   .specialty-container .subtitulo-main{
-    color: #64748b;
+    color: rgb(100, 116, 139);
     margin-bottom: 1.5rem;
     font-size: 1rem;
     font-weight: 500;
@@ -272,15 +272,15 @@
     justify-content: flex-end;
   }
   .specialty-container .crear-especialidad button{
-    background-color: #0c4a6e;
-    color: #ffffff;
+    background-color: rgb(12, 74, 110);
+    color: rgb(255, 255, 255);
     border: none;
     border-radius: 6px;
   }
   .specialty-container .crear-especialidad a{
     display: flex;
     text-decoration: none;
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 0.6rem 1.2rem;
     align-items: center;
     font-size: 0.9rem;
@@ -309,8 +309,8 @@
 
   .specialty-container footer {
     grid-area: footer;
-    background-color: #333;
-    color: white;
+    background-color: rgb(51, 51, 51);
+    color: rgb(255, 255, 255);
     text-align: center;
     padding: 1rem;
   }

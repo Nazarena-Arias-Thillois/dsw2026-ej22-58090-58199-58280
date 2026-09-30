@@ -1,4 +1,4 @@
-  .dashboard-container {
+.dashboard-container {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto 1fr auto;
@@ -50,9 +50,10 @@
     color: #0f172a;  
   }
   .dashboard-container .titulo-tabla{
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 700;
-    color: #0f172a;
+    color: #1e3a8a;
+
   }
   .dashboard-container .tabla-top{
     display: flex;
@@ -79,11 +80,13 @@
     outline: none;
     font-size: 0.85rem;
   }
-  .dashboard-container .tabla-conteiner{
+  .dashboard-container .table-conteiner{
     background-color: #ffffff;
     border: 1px solid #e2e8f0;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
   }
   .dashboard-container table{
     width: 100%;
@@ -103,7 +106,7 @@
   .dashboard-container th{
     text-align: left;
     padding: 0.75rem 1.25rem;
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: #64748b;
     font-weight: 600;
   }
@@ -111,6 +114,7 @@
     padding: 1rem 1.25rem;
     border-bottom: 1px solid #f1f5f9;
     font-size: 0.9rem;
+    color: #334155;
   }
   .dashboard-container nav {
     position: absolute;
@@ -123,10 +127,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 1.5rem 1rem;
+    padding: 1.2rem 0;
   }
   .dashboard-container nav.open {
       left: 0;
+  }
+  .dashboard-container nav .titulo-principal{  
+    padding: 0 1.5rem;
   }
   .dashboard-container nav .titulo-principal .titulo{
     font-size: 1.2rem;
@@ -160,10 +167,10 @@
   }
   .dashboard-container nav ul li.active a,
   .dashboard-container nav ul li a:hover {
-  background-color: #ffffff;
-  color: #0d9488;
-  font-weight: 600;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    border-left: 4px solid #1e3a8a;
+    background-color: #fefefe;
+    color: #0d9488;
+    font-weight: 600;
   }
   .dashboard-container .sesion{
     margin-top: auto;
@@ -176,7 +183,7 @@
     padding-top: 1rem;
     border-top: 1px solid #e2e8f0;
   }
-  .dashboard-container .user .img{
+  .dashboard-container .user img{
     width: 36px;
     height: 36px;
     border-radius: 50%;
@@ -272,4 +279,50 @@
     .dashboard-container header div .menu {
       display: none;
     }
+  }
+  .dashboard-container .doctor-info{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .dashboard-container .doctor-info img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .dashboard-container .nombre-doc{
+    font-weight: 600;
+    color: #1e3a8a; 
+  }
+  .dashboard-container .estado{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .dashboard-container .estado.activo{
+    background-color: #ecfdf5;
+    color: #059669;
+  }
+  .dashboard-container .estado.activo::before{
+    content: "";
+    width: 6px;
+    height: 6px;
+    background-color: #10b981;
+    border-radius: 50%;
+  }
+  .dashboard-container .estado.licencia{
+    background-color: #fef3c7;
+    color: #d97706;
+  }
+  .dashboard-container .estado.licencia::before{
+    content: "";
+    width: 6px;
+    height: 6px;
+    background-color: #f59e0b;
+    border-radius: 50%;
   }

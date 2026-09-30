@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listado de Productos</title>
+  <link rel =>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="specialty.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="specialties.js"></script>
+</head>
+<body>
+  <div class="specialty-container">
+    <header>
+      <div>
+        <button id="menu" class="menu">&#9776;</button>
+      </div>
+    </header>
+    <nav id="sidebar">
+      <div class="titulo-principal">
+        <div class="titulo">Admin Portal</div>
+        <div class="subtitulo">Healthcare Management</div>
+      </div>
+
+      <ul class="lista">
+        <li>
+          <a href="dashboard.html"><i class="fa-solid fa-border-all"></i>Panel</a>
+        </li>
+        <li>
+          <a href="#"><i class="fa-solid fa-user-doctor"></i>Doctores</a>
+        </li>
+        <li class="active">
+          <a href="specialty.html"><i class="fa-solid fa-stethoscope"></i>Especialidades</a>
+        </li>
+        <li>
+          <a href="#"><i class="fa-solid fa-magnifying-glass"></i>Búsqueda de Pacientes</a>
+        </li>
+      </ul>
+
+      <div class="sesion">
+        <ul>
+          <li>
+            <a href="#"><i class="fa-solid fa-gear"></i>Configuración</a>
+          </li>
+          <li>
+            <a href="login.html" id="logout"><i class="fa-solid fa-right-from-bracket"></i>Cerrar Sesión</a>
+          </li>
+        </ul>
+
+        <div class="user">
+          <img src="FOTO.jpg" alt="Perfil">
+            <div class="user-info">
+              <div class="user-name">Lula Sarte</div>
+              <div class="user-role">Administradora Jefe</div>
+            </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="titulos">
+        <h1 class="titulo-main">Directorio de Especialidades</h1>
+        <p class="subtitulo-main">Administre las categorías médicas, servicios y disponibilidad del personal especializado</p>
+      </div>
+      
+      <div class="botones">
+        <div class="buscador"><i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="busqueda" placeholder="Buscar especialidad...">
+        </div>
+        <div class="crear-especialidad">
+          <button id="crear-especialidad">
+            <a href="create-specialty.html"><i class="fa-solid fa-plus"></i>Nueva Especialidad</a>
+          </button>
+        </div>
+      </div>
+      <br>
+     
+      <div class="table-conteiner">
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre de la Especialidad</th>
+            <th>Descripción</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="specialtiesTable">
+          <!-- Los productos se cargarán aquí dinámicamente -->
+        </tbody>
+      </table>
+      </div>
+      <br>
+       <div class="tarjetas">
+        <div class="tarjeta">
+          <div class="texto">
+            TOTAL ESPECIALIDADES
+          </div>
+          <div class="icono"><i class="fa-solid fa-list"></i></div>
+          <div class="valor">
+            24
+          </div>
+        </div>
+
+        <div class="tarjeta">
+          <div class="texto">
+            MÁS DEMANDADA
+          </div>
+          <div class="icono"><i class="fa-regular fa-heart"></i></div>
+          <div class="valor">
+            Cardiología
+          </div>
+        </div>
+
+        <div class="tarjeta">
+          <div class="texto">
+            NUEVAS ESTE MES
+          </div>
+          <div class="icono"><i class="fa-solid fa-circle-check"></i></div>
+          <div class="valor">
+            03
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</body>
+</html>
